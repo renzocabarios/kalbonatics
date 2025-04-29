@@ -20,7 +20,7 @@ export default function CoinFlipChoices() {
     <div className="w-full flex justify-center p-[10px] gap-[10px] items-center">
       <div
         onClick={onHead}
-        className="py-[10px] flex justify-between w-[247px] h-[84px] items-center px-[16px] border-[#E5E5CB] border-[2px] rounded-tl-[64px] rounded-bl-[64px] "
+        className="hover:cursor-pointer py-[10px] flex justify-between w-[247px] h-[84px] items-center px-[16px] border-[#E5E5CB] border-[2px] rounded-tl-[64px] rounded-bl-[64px] "
       >
         <img
           src="./heads.png"
@@ -31,7 +31,7 @@ export default function CoinFlipChoices() {
       </div>
       <div
         onClick={onTail}
-        className="py-[10px] flex justify-between w-[247px] h-[84px] items-center px-[16px]  border-[#E5E5CB] border-[2px] rounded-tr-[64px] rounded-br-[64px] "
+        className="hover:cursor-pointer py-[10px] flex justify-between w-[247px] h-[84px] items-center px-[16px]  border-[#E5E5CB] border-[2px] rounded-tr-[64px] rounded-br-[64px] "
       >
         <p className=" font-extrabold ">TAILS</p>
         <img

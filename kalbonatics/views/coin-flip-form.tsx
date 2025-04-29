@@ -35,9 +35,9 @@ export default function CoinFlipForm() {
             setbet(Number(e.target.value));
           }}
           type="number"
-          placeholder="place bet"
+          placeholder="Place your bet"
           className={cn(
-            "border-[1px] rounded-[8px] p-[16px] border-[#E5E5CB1F]"
+            "border-[1px] rounded-[8px] p-[16px] text-[24px] border-[#E5E5CB1F]"
           )}
         />
       </div>
@@ -46,7 +46,7 @@ export default function CoinFlipForm() {
         <Button
           onClick={onHalf}
           className={cn(
-            "p-[16px] hover:cursor-pointer basis-[49%] rounded-[8px] bg-[#E5E5CB] text-[#191919]"
+            "p-[16px] hover:cursor-pointer font-extrabold hover:bg-[#191919] hover:border-[#E5E5CB] hover:text-[#E5E5CB]  hover:border-[1px] flex-1 rounded-[8px] bg-[#E5E5CB] text-[#191919]"
           )}
         >
           HALF
@@ -55,7 +55,7 @@ export default function CoinFlipForm() {
         <Button
           onClick={onMax}
           className={cn(
-            "p-[16px] hover:cursor-pointer basis-[49%] rounded-[8px] bg-[#E5E5CB] text-[#191919]"
+            "p-[16px] hover:cursor-pointer flex-1 font-extrabold hover:bg-[#191919] hover:border-[#E5E5CB] hover:text-[#E5E5CB]  hover:border-[1px]  rounded-[8px] bg-[#E5E5CB] text-[#191919]"
           )}
         >
           MAX
@@ -65,7 +65,7 @@ export default function CoinFlipForm() {
       <div className="flex gap-[16px] font-extrabold">
         <Button
           className={cn(
-            "p-[16px] hover:cursor-pointer w-full rounded-[8px] bg-[#E5E5CB] text-[#191919]"
+            "p-[16px] hover:cursor-pointer  hover:bg-[#191919] hover:border-[#E5E5CB] hover:text-[#E5E5CB]  hover:border-[1px] font-extrabold w-full rounded-[8px] bg-[#E5E5CB] text-[#191919]"
           )}
           onClick={onBet}
         >

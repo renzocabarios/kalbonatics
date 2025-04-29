@@ -72,16 +72,12 @@ const myTheme = merge(darkTheme(), {
   },
 } as Theme);
 
-function App({ children }: { children: React.ReactNode }) {
+export default function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <WagmiProvider config={config}>
-        <QueryClientProvider client={queryClient}>
-          <RainbowKitProvider theme={myTheme}>{children}</RainbowKitProvider>
-        </QueryClientProvider>
-      </WagmiProvider>
-    </>
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider theme={myTheme}>{children}</RainbowKitProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
   );
 }
-
-export default App;

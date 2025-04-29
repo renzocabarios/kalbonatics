@@ -1,0 +1,13 @@
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import React from "react";
+
+export default function Navbar() {
+  return (
+    <nav className="flex justify-between items-center px-[32px] w-full max-w-[1280px] p-4">
+      <div className="p-4 bg-[#E5E5CB] rounded-[8px]">
+        <p className="font-extrabold">KALFLIP</p>
+      </div>
+      <ConnectButton />
+    </nav>
+  );
+}

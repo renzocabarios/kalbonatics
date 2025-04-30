@@ -5,11 +5,11 @@ export default function CoinFlipChoices() {
   const [type, settype] = useState("HEAD");
 
   const onHead = () => {
-    settype("HEAD");
+    settype("HEADS");
   };
 
   const onTail = () => {
-    settype("TAIL");
+    settype("TAILS");
   };
 
   useEffect(() => {
@@ -23,11 +23,11 @@ export default function CoinFlipChoices() {
         className="hover:cursor-pointer py-[10px] flex justify-between w-[247px] h-[84px] items-center px-[16px] border-[#E5E5CB] border-[2px] rounded-tl-[64px] rounded-bl-[64px] "
       >
         <img
-          src="./heads.png"
+          src="./heads-coin.png"
           className="rounded-[128px] w-[64px] h-[64px]"
           alt=""
         />
-        <p className="font-extrabold ">HEAD</p>
+        <p className="font-extrabold ">HEADS</p>
       </div>
       <div
         onClick={onTail}
@@ -35,7 +35,7 @@ export default function CoinFlipChoices() {
       >
         <p className=" font-extrabold ">TAILS</p>
         <img
-          src="./tails.png"
+          src="./tails-coin.png"
           className="w-[64px] rounded-[128px] h-[64px]"
           alt=""
         />

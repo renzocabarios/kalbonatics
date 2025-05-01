@@ -6,7 +6,7 @@ import CoinFlipResult from "@/views/coin-flip-result";
 export default function Home() {
   return (
     <>
-      <div className="min-h-screen flex flex-col gap-8 bg-[#191919] text-[#E5E5CB] items-center">
+      <div className="min-h-screen flex flex-col gap-8 bg-[#191919] text-[#E5E5CB] items-center p-[32px] ">
         <Navbar />
 
         <div className="w-full max-w-[1280px] flex flex-col gap-4 items-center">

@@ -17,23 +17,23 @@ export default function CoinFlipChoices() {
   }, [type]);
 
   return (
-    <div className="w-full flex justify-center p-[10px] gap-[10px] items-center">
+    <div className="w-full  max-w-[533px] flex justify-center p-[10px] gap-[10px] items-center">
       <div
         onClick={onHead}
-        className="hover:cursor-pointer py-[10px] flex justify-between w-[247px] h-[84px] items-center px-[16px] border-[#E5E5CB] border-[2px] rounded-tl-[64px] rounded-bl-[64px] "
+        className="hover:cursor-pointer py-[10px] flex justify-between w-full items-center px-[16px] border-[#E5E5CB] border-[2px] rounded-tl-[64px] rounded-bl-[64px] "
       >
         <img
           src="./heads-coin.png"
           className="rounded-[128px] w-[64px] h-[64px]"
           alt=""
         />
-        <p className="font-extrabold ">HEADS</p>
+        <p className="font-extrabold text-[24px]">HEADS</p>
       </div>
       <div
         onClick={onTail}
-        className="hover:cursor-pointer py-[10px] flex justify-between w-[247px] h-[84px] items-center px-[16px]  border-[#E5E5CB] border-[2px] rounded-tr-[64px] rounded-br-[64px] "
+        className="hover:cursor-pointer py-[10px] flex justify-between w-full  items-center px-[16px]  border-[#E5E5CB] border-[2px] rounded-tr-[64px] rounded-br-[64px] "
       >
-        <p className=" font-extrabold ">TAILS</p>
+        <p className=" font-extrabold text-[24px]">TAILS</p>
         <img
           src="./tails-coin.png"
           className="w-[64px] rounded-[128px] h-[64px]"

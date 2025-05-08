@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract Registry {
-    mapping(string => address) contracts;
+import "./interfaces/IRegistry.sol";
 
-    event SetContractEvent(address contractAddress, string contractName);
+contract Registry is IRegistry {
+    mapping(string => address) contracts;
 
     function setContract(
         address contractAddress,

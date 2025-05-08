@@ -1,11 +1,14 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "./Registry.sol";
 
 contract Treasury {
     event UserBetEvent(uint amount, string guess, address user);
     event SetRewardsEvent(uint amount, address user);
 
     address public owner;
+    Registry registry;
 
     mapping(address => uint) userRewards;
 
@@ -18,21 +21,11 @@ contract Treasury {
         _;
     }
 
-    function bet(uint amount, string memory guess) public {
-        require(isValid(guess), "Input must be 'HEADS' or 'TAILS'");
+    function setRegistry(address registryAddress) public onlyOwner {
+        registry = Registry(registryAddress);
+    }
+
+    function addToTreasury(uint amount, string memory guess) public onlyOwner {
         emit UserBetEvent(amount, guess, msg.sender);
-    }
-
-    function setRewards(uint amount, address user) public onlyOwner {
-        userRewards[user] = amount;
-        emit SetRewardsEvent(amount, user);
-    }
-
-    function isValid(string memory input) public pure returns (bool) {
-        bytes32 inputHash = keccak256(abi.encodePacked(input));
-        bytes32 headsHash = keccak256(abi.encodePacked("HEADS"));
-        bytes32 tailsHash = keccak256(abi.encodePacked("TAILS"));
-
-        return inputHash == headsHash || inputHash == tailsHash;
     }
 }

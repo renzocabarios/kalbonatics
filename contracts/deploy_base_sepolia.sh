@@ -1,0 +1,1 @@
+forge script script/deployment.s.sol:DeploymentScript --via-ir --rpc-url base_sepolia --broadcast --slow --no-cache

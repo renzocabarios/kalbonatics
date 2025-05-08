@@ -22,8 +22,14 @@ contract Kalbonatics {
         _;
     }
 
+    function setRegistry(address registryAddress) public onlyOwner {
+        registry = Registry(registryAddress);
+    }
+
     function bet(uint amount, string memory guess) public {
         require(isValid(guess), "Input must be 'HEADS' or 'TAILS'");
+
+        registry.getContractAddress("Treasury");
         emit UserBetEvent(amount, guess, msg.sender);
     }
 

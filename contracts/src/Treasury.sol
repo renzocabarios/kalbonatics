@@ -2,10 +2,9 @@
 pragma solidity ^0.8.13;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./Registry.sol";
+import "./interfaces/ITreasury.sol";
 
-contract Treasury {
-    event UserBetEvent(uint amount, string guess, address user);
-    event SetRewardsEvent(uint amount, address user);
+contract Treasury is ITreasury {
 
     address public owner;
     Registry registry;

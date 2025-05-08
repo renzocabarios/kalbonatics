@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import "./interfaces/IRegistry.sol";
 
+// TODO: Add owner only
 contract Registry is IRegistry {
     mapping(string => address) contracts;
 

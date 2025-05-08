@@ -25,6 +25,10 @@ contract Kalbonatics is IKalbonatics {
         registry = Registry(registryAddress);
     }
 
+    function getRegistry() public view returns (address) {
+        return address(registry);
+    }
+
     function bet(uint amount, string memory guess) public {
         require(isValid(guess), "Input must be 'HEADS' or 'TAILS'");
 
@@ -32,7 +36,7 @@ contract Kalbonatics is IKalbonatics {
         Treasury treasury = Treasury(treasuryAddress);
 
         treasury.addToTreasury(amount);
-        emit UserBetEvent(amount, guess, msg.sender);
+        // emit UserBetEvent(amount, guess, msg.sender);
     }
 
     function setRewards(uint amount, address user) public onlyOwner {

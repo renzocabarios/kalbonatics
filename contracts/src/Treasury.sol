@@ -23,6 +23,10 @@ contract Treasury is ITreasury {
         registry = Registry(registryAddress);
     }
 
+    function getRegistry() public view returns (address) {
+        return address(registry);
+    }
+
     function addToTreasury(uint amount) public {
         address kalboTokenAddress = registry.getContractAddress("KalboToken");
 

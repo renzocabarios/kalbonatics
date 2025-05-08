@@ -45,6 +45,13 @@ contract DeploymentScript is Script {
 
         registry.setContract(address(treasury), "Treasury");
         console.log("Registry: Set Treasury");
+
+        kalbonatics.setRegistry(address(registry));
+        console.log("Kalbonatics: Set Registry");
+
+        treasury.setRegistry(address(registry));
+        console.log("Treasury: Set Treasury");
+
         vm.stopBroadcast();
     }
 }

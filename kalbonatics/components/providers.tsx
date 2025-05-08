@@ -19,64 +19,65 @@ const config = getDefaultConfig({
 });
 
 const queryClient = new QueryClient();
-const myTheme = merge(darkTheme(), {
-  colors: {
-    accentColor: "#E5E5CB",
-    accentColorForeground: "#191919",
-    actionButtonBorder: "...",
-    actionButtonBorderMobile: "...",
-    actionButtonSecondaryBackground: "...",
-    closeButton: "...",
-    closeButtonBackground: "...",
-    connectButtonBackground: "...",
-    connectButtonBackgroundError: "...",
-    connectButtonInnerBackground: "...",
-    connectButtonText: "...",
-    connectButtonTextError: "...",
-    connectionIndicator: "...",
-    downloadBottomCardBackground: "...",
-    downloadTopCardBackground: "...",
-    error: "...",
-    generalBorder: "...",
-    generalBorderDim: "...",
-    menuItemBackground: "...",
-    modalBackdrop: "...",
-    modalBackground: "...",
-    modalBorder: "...",
-    modalText: "...",
-    modalTextDim: "...",
-    modalTextSecondary: "...",
-    profileAction: "...",
-    profileActionHover: "...",
-    profileForeground: "...",
-    selectedOptionBorder: "...",
-    standby: "...",
-  },
-  fonts: {
-    body: "Kanit",
-  },
-  radii: {
-    actionButton: "...",
-    connectButton: "...",
-    menuButton: "...",
-    modal: "...",
-    modalMobile: "...",
-  },
-  shadows: {
-    connectButton: "...",
-    dialog: "...",
-    profileDetailsAction: "...",
-    selectedOption: "...",
-    selectedWallet: "...",
-    walletLogo: "...",
-  },
-} as Theme);
+// const myTheme = merge(darkTheme(), {
+//   colors: {
+//     accentColor: "#E5E5CB",
+//     accentColorForeground: "#191919",
+//     actionButtonBorder: "...",
+//     actionButtonBorderMobile: "...",
+//     actionButtonSecondaryBackground: "...",
+//     closeButton: "...",
+//     closeButtonBackground: "...",
+//     connectButtonBackground: "...",
+//     connectButtonBackgroundError: "...",
+//     connectButtonInnerBackground: "...",
+//     connectButtonText: "...",
+//     connectButtonTextError: "...",
+//     connectionIndicator: "...",
+//     downloadBottomCardBackground: "...",
+//     downloadTopCardBackground: "...",
+//     error: "...",
+//     generalBorder: "...",
+//     generalBorderDim: "...",
+//     menuItemBackground: "...",
+//     modalBackdrop: "...",
+//     modalBackground: "...",
+//     modalBorder: "...",
+//     modalText: "...",
+//     modalTextDim: "...",
+//     modalTextSecondary: "...",
+//     profileAction: "...",
+//     profileActionHover: "...",
+//     profileForeground: "...",
+//     selectedOptionBorder: "...",
+//     standby: "...",
+//   },
+//   fonts: {
+//     body: "Kanit",
+//   },
+//   radii: {
+//     actionButton: "...",
+//     connectButton: "...",
+//     menuButton: "...",
+//     modal: "...",
+//     modalMobile: "...",
+//   },
+//   shadows: {
+//     connectButton: "...",
+//     dialog: "...",
+//     profileDetailsAction: "...",
+//     selectedOption: "...",
+//     selectedWallet: "...",
+//     walletLogo: "...",
+//   },
+// } as Theme);
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider theme={myTheme}>{children}</RainbowKitProvider>
+        {/* <RainbowKitProvider theme={myTheme}>{children}</RainbowKitProvider> */}
+        <RainbowKitProvider>{children}</RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );

@@ -5,7 +5,6 @@ import "./Registry.sol";
 import "./interfaces/ITreasury.sol";
 
 contract Treasury is ITreasury {
-
     address public owner;
     Registry registry;
 
@@ -24,7 +23,11 @@ contract Treasury is ITreasury {
         registry = Registry(registryAddress);
     }
 
-    function addToTreasury(uint amount, string memory guess) public onlyOwner {
-        emit UserBetEvent(amount, guess, msg.sender);
+    function addToTreasury(uint amount) public {
+        address kalboTokenAddress = registry.getContractAddress("KalboToken");
+
+        ERC20 kalboToken = ERC20(kalboTokenAddress);
+        kalboToken.transferFrom(msg.sender, address(this), amount);
+        emit UserBetEvent(amount, msg.sender);
     }
 }

@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 import "./Registry.sol";
+import "./Treasury.sol";
 import "./interfaces/IKalbonatics.sol";
+
 // TODO: Add 3% of kalbotokens as terminal fee to bet
 contract Kalbonatics is IKalbonatics {
     address public owner;
@@ -26,7 +28,10 @@ contract Kalbonatics is IKalbonatics {
     function bet(uint amount, string memory guess) public {
         require(isValid(guess), "Input must be 'HEADS' or 'TAILS'");
 
-        registry.getContractAddress("Treasury");
+        address treasuryAddress = registry.getContractAddress("Treasury");
+        Treasury treasury = Treasury(treasuryAddress);
+
+        treasury.addToTreasury(amount);
         emit UserBetEvent(amount, guess, msg.sender);
     }
 

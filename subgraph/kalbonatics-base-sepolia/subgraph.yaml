@@ -1,0 +1,26 @@
+specVersion: 1.2.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Contract
+    network: base-sepolia
+    source:
+      address: "0xbf1E8848319f41bdcAe753ad91F4D7e54C53aD59"
+      abi: Contract
+      startBlock: 25458673
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - SetContractEvent
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: SetContractEvent(address,string)
+          handler: handleSetContractEvent
+      file: ./src/contract.ts

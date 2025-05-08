@@ -31,6 +31,20 @@ contract DeploymentScript is Script {
         Treasury treasury = new Treasury();
         console.log("Treasury Address:", address(treasury));
 
+        registry.setContract(address(registry), "Registry");
+        console.log("Registry: Set Registry");
+
+        registry.setContract(address(kalboToken), "KalboToken");
+        console.log("Registry: Set KalboToken");
+
+        registry.setContract(address(kalbonatics), "Kalbonatics");
+        console.log("Registry: Set Kalbonatics");
+
+        registry.setContract(address(swap), "Swap");
+        console.log("Registry: Set Swap");
+
+        registry.setContract(address(treasury), "Treasury");
+        console.log("Registry: Set Treasury");
         vm.stopBroadcast();
     }
 }

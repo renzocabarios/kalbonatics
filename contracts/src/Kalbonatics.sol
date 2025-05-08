@@ -1,12 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 import "./Registry.sol";
-
+import "./interfaces/IKalbonatics.sol";
 // TODO: Add 3% of kalbotokens as terminal fee to bet
-contract Kalbonatics {
-    event UserBetEvent(uint amount, string guess, address user);
-    event SetRewardsEvent(uint amount, address user);
-
+contract Kalbonatics is IKalbonatics {
     address public owner;
 
     mapping(address => uint) userRewards;

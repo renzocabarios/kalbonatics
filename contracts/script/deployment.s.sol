@@ -2,11 +2,10 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
-import {Counter} from "../src/Counter.sol";
+import {Registry} from "../src/Registry.sol";
+import {KalboToken} from "../src/KalboToken.sol";
 
 contract DeploymentScript is Script {
-    Counter public counter;
-
     function setUp() public {}
 
     function run() public {
@@ -14,7 +13,11 @@ contract DeploymentScript is Script {
 
         vm.startBroadcast(deployerPrivateKey);
 
-        counter = new Counter();
+        Registry registry = new Registry();
+        console.log("Registry Address:", address(registry));
+
+        KalboToken kalboToken = new KalboToken();
+        console.log("KalboToken Address:", address(kalboToken));
 
         vm.stopBroadcast();
     }
